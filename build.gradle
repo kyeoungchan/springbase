@@ -45,6 +45,9 @@ dependencies {
 
     // Spring Security OAuth2 클라이언트
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+    // 세션 저장소로 DB를 사용하기 위한 Spring Session JDBC 관련 의존성 추가
+    implementation 'org.springframework.session:spring-session-jdbc:3.5.0'
 }
 
 tasks.named('test') {
