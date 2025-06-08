@@ -43,6 +43,9 @@ dependencies {
     // p6spy 관련 의존성 추가
     implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.10.0")
 
+    // 머스테치 관련 의존성 추가
+    implementation 'org.springframework.boot:spring-boot-starter-mustache'
+
     // Spring Security OAuth2 클라이언트
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 
