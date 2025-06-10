@@ -13,7 +13,7 @@ public class WebConfig implements WebMvcConfigurer {
     private final LoginUserArgumentResolver loginUserArgumentResolver;
 
     /**
-     * LoginUserArgumentResolver 를 스프링에서 인식될 수 이ㅏㅆ도록 WebMvcConfigurer 에 추가한다.
+     * LoginUserArgumentResolver 를 스프링에서 인식될 수 있도록 WebMvcConfigurer 에 추가한다.
      * @param resolvers
      */
     @Override
