@@ -8,9 +8,11 @@ import com.charles.study.springbase.web.dto.PostsSaveRequestDto;
 import com.charles.study.springbase.web.dto.PostsUpdateRequestDto;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class PostsService {
@@ -19,6 +21,7 @@ public class PostsService {
 
     @Transactional
     public Long save(PostsSaveRequestDto requestDto) {
+        log.info("request: {}", requestDto);
         return postsRepository.save(requestDto.toEntity()).getId();
     }
 

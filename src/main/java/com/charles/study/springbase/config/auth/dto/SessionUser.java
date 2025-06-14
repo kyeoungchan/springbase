@@ -10,9 +10,6 @@ import lombok.Getter;
 @Getter
 public class SessionUser implements Serializable {
 
-    // 직렬화 코드 추가
-    private static final long serialVersionUID = 1L;
-
     private String name;
     private String email;
     private String picture;
