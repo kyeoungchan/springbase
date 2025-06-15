@@ -1,9 +1,11 @@
 package com.charles.study.springbase.web;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -21,6 +23,8 @@ class HelloControllerTest {
     private MockMvc mvc;
 
     @Test
+    @WithMockUser(roles = "USER") // 인증된 모의(가짜) 사용자를 만들어서 사용한다.
+    @DisplayName("hello가 리턴된다.")
     public void helloTest() throws Exception {
         String hello = "hello";
 
@@ -30,6 +34,8 @@ class HelloControllerTest {
     }
 
     @Test
+    @WithMockUser(roles = "USER") // 인증된 모의(가짜) 사용자를 만들어서 사용한다.
+    @DisplayName("helloDto가 리턴된다.")
     public void helloDtoTest() throws Exception {
         String name = "hello";
         int amount = 1000;
