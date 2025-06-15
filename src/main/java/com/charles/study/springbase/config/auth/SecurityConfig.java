@@ -3,12 +3,14 @@ package com.charles.study.springbase.config.auth;
 import com.charles.study.springbase.domain.user.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 
+@Configuration // Spring Security 6 버전 이상부터는 꼭 필요하다!
 @RequiredArgsConstructor
 @EnableWebSecurity // Spring Security 설정들을 활성화시켜준다.
 public class SecurityConfig {
