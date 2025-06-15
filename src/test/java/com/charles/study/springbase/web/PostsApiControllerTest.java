@@ -28,7 +28,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
@@ -122,8 +121,7 @@ class PostsApiControllerTest {
         mockMvc.perform(put(url)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(requestDto)))
-//                .andExpect(status().isOk());
-                .andDo(print());
+                .andExpect(status().isOk());
 
         // then
 //        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
