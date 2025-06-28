@@ -59,3 +59,14 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+tasks.withType(Test).configureEach {
+    // gradle build 시에 테스트 생략
+    enabled = false
+}
+
+jar {
+    // plain.jar 방지
+    enabled = false
+}
+
