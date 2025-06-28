@@ -65,8 +65,13 @@ tasks.withType(Test).configureEach {
     enabled = false
 }
 
+bootJar {
+    // bootJar 활성화
+    enabled = true
+}
+
 jar {
-    // plain.jar 방지
+    // jar 비활성화
     enabled = false
 }
 
