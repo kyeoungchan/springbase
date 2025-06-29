@@ -60,10 +60,12 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
+/*
 tasks.withType(Test).configureEach {
     // gradle build 시에 테스트 생략
     enabled = false
 }
+*/
 
 bootJar {
     // bootJar 활성화
