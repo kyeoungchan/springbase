@@ -21,6 +21,7 @@ before_deploy:
 
 deploy:
   - provider: s3
+    edge: false  # dpl v1 사용 → nokogiri가 설치되지 않아서 생기는 문제 피하기
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: springbase-springboot-build
