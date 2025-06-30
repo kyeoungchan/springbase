@@ -15,7 +15,7 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r springbase *
+  - zip -r springbase ./*
   - mkdir -p deploy
   - mv springbase.zip deploy/springbase.zip
 
