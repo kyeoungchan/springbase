@@ -6,6 +6,11 @@ branches:
   only:
     - main
 
+# Travis CI은 GLIBC 2.27 이하 사용 → Nokogiri가 GLIBC 실행 시도하다가 에러 발생 → v1을 사용하게 함으로써 Nokogiri 사용 안하게 하기
+before_install:
+  - gem uninstall dpl --all --executables || true
+  - gem install dpl -v 1.10.16 --no-document
+
 # Travis CI 서버의 Home
 cache:
   directories:
@@ -21,8 +26,6 @@ before_deploy:
 
 deploy:
   - provider: s3
-    edge:
-      branch: v2.0.5.4
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: springbase-springboot-build
