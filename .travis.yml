@@ -26,6 +26,8 @@ before_deploy:
 
 deploy:
   - provider: s3
+    edge:
+      branch: v1.10.16
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: springbase-springboot-build
