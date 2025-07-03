@@ -23,7 +23,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .headers(headersConfigurer -> headersConfigurer.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable)) // h2-console 화면을 사용하기 위한 disable
                 .authorizeHttpRequests(authorizeRequest -> authorizeRequest
-                        .requestMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**").permitAll()
+                        .requestMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile").permitAll()
                         .requestMatchers("/api/v1/**").hasRole(Role.USER.name()) // 권한 관리 대상을 지정하는 옵션. 해당 api는 USER 권한을 가진 사람만 가능하다.
                         .anyRequest().authenticated()) // 설정된 값들 이외의 url들. authenticated()에 의해 인증된(로그인한) 사용자들만 허용한다.
                 .logout(logout -> logout.logoutSuccessUrl("/")) // 로그아웃 성공시 가는 주소
